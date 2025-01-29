@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">CourseRegistrationSystem</string>
+    <string name="click_here">click here</string>
+    <string name="submit">Submit</string>
+    <string name="c_programming">C Programming</string>
+    <string name="competitive_programming">Competitive Programming</string>
+    <string name="database_management_system">Database Management System</string>
+    <string name="digital_logic_design">Digital Logic Design</string>
+    <string name="object_oriented_programming">Object Oriented Programming</string>
+    <string name="number_theory">Number Theory</string>
+    <string name="introduction_to_python">Introduction to Python</string>
+    <string name="android_app_development">Android App Development</string>
+    <string name="for_details_about_courses">For details about courses,</string>
+    <string name="course_registration">Course Registration</string>
+    <string name="select_the_course_you_want_to_enroll_in">Select the course you want to enroll in:</string>
+    <string name="enter_your_student_id">Enter your Student ID</string>
+    <string name="enter_full_name">Enter Full Name</string>
+    <string name="enter_your_phone_number">Enter your Phone Number</string>
+    <string name="enter_your_password">Enter your Password</string>
+    <string name="enter_your_email">Enter your email</string>
+    <string name="no_courses_enrolled">No courses enrolled</string>
+</resources>
