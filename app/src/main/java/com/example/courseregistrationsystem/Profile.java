@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -32,9 +31,8 @@ public class Profile extends AppCompatActivity {
         course_enrolled=findViewById(R.id.tv_profile_courseEnrolled);
         dbhelper=new DBHelper(Profile.this);
         String student_id=getIntent().getStringExtra("student_id");
-        displayStudentInfo(student_id);
-
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+        String stu_Name =displayStudentInfo(student_id);
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.pass_admin), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
@@ -46,7 +44,7 @@ public class Profile extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        findViewById(R.id.btn_profile_addCourse).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.btn_profile_addwithdrawCourse).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(Profile.this,CourseActivity.class);
@@ -54,10 +52,28 @@ public class Profile extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        findViewById(R.id.btn_profile_updateProfile).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(Profile.this,UpdateProfile.class);
+                intent.putExtra("student_id",student_id);
+                startActivity(intent);
+            }
+        });
+        findViewById(R.id.btn_profile_result).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(Profile.this,Result.class);
+                intent.putExtra("student_id",student_id);
+                intent.putExtra("stu_Name",stu_Name);
+                startActivity(intent);
+            }
+        });
     }
-    void displayStudentInfo(String student_id){
+    String displayStudentInfo(String student_id){
         SQLiteDatabase db=dbhelper.getReadableDatabase();
         Cursor cursor = db.rawQuery("SELECT * FROM students WHERE student_id = ?", new String[]{student_id});
+        String n="";
         if (cursor.moveToFirst()) {
             String name = cursor.getString(cursor.getColumnIndex("name"));
             String email = cursor.getString(cursor.getColumnIndex("email"));
@@ -67,11 +83,13 @@ public class Profile extends AppCompatActivity {
             stuEmail.setText("Email: "+email);
             stuPhone.setText("Phone: "+phone);
             displayCoursesEnrolled(student_id);
+            n=name;
         }
         else{
             Toast.makeText(this, "Student not found", Toast.LENGTH_SHORT).show();
         }
         cursor.close();
+        return n;
     }
     void displayCoursesEnrolled(String student_id){
         SQLiteDatabase db=dbhelper.getReadableDatabase();

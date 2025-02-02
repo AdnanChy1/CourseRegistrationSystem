@@ -55,13 +55,9 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-        Switch darkModeSwitch = findViewById(R.id.stw_login_dark);
-        darkModeSwitch.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            if (isChecked) {
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-            } else {
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-            }
-        });
+    }
+    public void onBackPressed(){
+        Intent intent=new Intent(MainActivity.this,WelcomeActivity.class);
+        startActivity(intent);
     }
 }

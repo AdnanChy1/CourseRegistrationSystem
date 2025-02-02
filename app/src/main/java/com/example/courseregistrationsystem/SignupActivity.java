@@ -1,11 +1,9 @@
 package com.example.courseregistrationsystem;
 
-import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 import android.widget.Button;
@@ -51,24 +49,23 @@ public class SignupActivity extends AppCompatActivity {
                 values.put("email", email);
                 values.put("phone", phone);
                 long result = db.insert("students", null, values);
-                Log.d("RegisterDebug", "Student ID: " + stuID);
-                Log.d("RegisterDebug", "Name: " + name);
-                Log.d("RegisterDebug", "Password: " + pass);
-                Log.d("RegisterDebug", "Email: " + email);
-                Log.d("RegisterDebug", "Phone: " + phone);
                 if (result != -1) {
                     Toast.makeText(SignupActivity.this, "User Registered Successfully", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(SignupActivity.this, MainActivity.class);
                     startActivity(intent);
                 } else {
-                    Toast.makeText(SignupActivity.this, "Registration Failed", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(SignupActivity.this, "User already exists", Toast.LENGTH_SHORT).show();
                 }
             }
         });
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.pass_admin), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+    }
+    public void onBackPressed(){
+        Intent intent=new Intent(SignupActivity.this,MainActivity.class);
+        startActivity(intent);
     }
 }

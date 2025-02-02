@@ -10,6 +10,7 @@ public class DBHelper extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 1;
     private static final String TABLE_STUDENTS="students";
     private static final String TABLE_ENROLLED="enrolled";
+    private static final String TABLE_RESULTS="results";
     public static final String COLUMN_ID = "student_id";
     public static final String COLUMN_NAME = "name";
     public static final String COLUMN_EMAIL = "email";
@@ -28,7 +29,14 @@ public class DBHelper extends SQLiteOpenHelper {
                     "courses_enrolled TEXT NOT NULL, " +
                     "FOREIGN KEY (student_id) REFERENCES Students(student_id), " +
                     "PRIMARY KEY (student_id, courses_enrolled));";
-
+    private static final String CREATE_TABLE_RESULTS = "CREATE TABLE "+ TABLE_RESULTS + "("
+            + "student_id TEXT, "
+            + "course_name TEXT, "
+            + "course_credit FLOAT, "
+            + "gpa FLOAT, "
+            + "grade TEXT, "
+            + "PRIMARY KEY (student_id, course_name), "
+            + "FOREIGN KEY (student_id) REFERENCES Students(student_id));";
     public DBHelper(Context context){
         super(context,"university.db",null,1);
     }
@@ -36,6 +44,7 @@ public class DBHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db){
         db.execSQL(CREATE_TABLE_STUDENTS);
         db.execSQL(CREATE_TABLE_ENROLLED);
+        db.execSQL(CREATE_TABLE_RESULTS);
     }
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {

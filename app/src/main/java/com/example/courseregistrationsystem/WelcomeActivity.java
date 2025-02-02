@@ -14,6 +14,7 @@ public class WelcomeActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        String AdminPass="adnan";
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_welcome);
@@ -24,10 +25,21 @@ public class WelcomeActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+        findViewById(R.id.btn_welcome_admin).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(WelcomeActivity.this,AdminActivity.class);
+                intent.putExtra("admin_pass",AdminPass);
+                startActivity(intent);
+            }
+        });
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.pass_admin), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+    }
+    public void onBackPressed(){
+        finishAffinity();
     }
 }
