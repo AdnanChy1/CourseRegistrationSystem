@@ -1,39 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-<LinearLayout
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/pass_admin"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".CourseInfo">
+    android:background="#E6DFDF">
 
-    <ImageView
-        android:id="@+id/im_info_logo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        app:srcCompat="@drawable/lulogo"
-        tools:layout_editor_absoluteX="96dp"
-        tools:layout_editor_absoluteY="33dp" />
-
-    <TextView
-        android:id="@+id/tv_c1_info"
+    <LinearLayout
+        android:id="@+id/pass_admin"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:contentDescription="eassdjnfdj" />
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".CourseInfo">
 
-    <TextView
-        android:id="@+id/et_info"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="&quot;Course Code: CS101\nCourse Name: Introduction to Python\nCredit: 3\n\nCourse Code: CS102\nCourse Name: C Programming\nCredit: 4\n\nCourse Code: CS103\nCourse Name: Competitive Programming\nCredit: 3\n\nCourse Code: CS104\nCourse Name: Object Oriented Programming\nCredit: 3\n\nCourse Code: CS105\nCourse Name: Digital Logic Design\nCredit: 4\n\nCourse Code: CS106\nCourse Name: Number Theory\nCredit: 3\n\nCourse Code: CS107\nCourse Name: Database Management System\nCredit: 4\n\nCourse Code: CS108\nCourse Name: Android App Development\nCredit: 3&quot;"
-        android:textSize="13sp"
-        android:textStyle="bold" />
+        <ImageView
+            android:id="@+id/im_info_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/lulogo"
+            tools:layout_editor_absoluteX="96dp"
+            tools:layout_editor_absoluteY="33dp" />
 
-</LinearLayout>
+        <TextView
+            android:id="@+id/tv_c1_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:contentDescription="eassdjnfdj" />
+
+        <TextView
+            android:id="@+id/et_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="&quot;Course Code: CS101\nCourse Name: Introduction to Python\nCredit: 3\n\nCourse Code: CS102\nCourse Name: C Programming\nCredit: 4\n\nCourse Code: CS103\nCourse Name: Competitive Programming\nCredit: 3\n\nCourse Code: CS104\nCourse Name: Object Oriented Programming\nCredit: 3\n\nCourse Code: CS105\nCourse Name: Digital Logic Design\nCredit: 4\n\nCourse Code: CS106\nCourse Name: Number Theory\nCredit: 3\n\nCourse Code: CS107\nCourse Name: Database Management System\nCredit: 4\n\nCourse Code: CS108\nCourse Name: Android App Development\nCredit: 3&quot;"
+            android:textSize="13sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btn_courseinfo_back"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="100dp"
+            android:backgroundTint="#1DE9B6"
+            android:gravity="center"
+            android:text="Back "
+            android:textColor="#211F1F" />
+
+    </LinearLayout>
 </ScrollView>

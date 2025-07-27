@@ -23,6 +23,7 @@ public class WelcomeActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent=new Intent(WelcomeActivity.this,MainActivity.class);
                 startActivity(intent);
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
             }
         });
         findViewById(R.id.btn_welcome_admin).setOnClickListener(new View.OnClickListener() {
@@ -31,6 +32,7 @@ public class WelcomeActivity extends AppCompatActivity {
                 Intent intent=new Intent(WelcomeActivity.this,AdminActivity.class);
                 intent.putExtra("admin_pass",AdminPass);
                 startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
             }
         });
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.pass_admin), (v, insets) -> {

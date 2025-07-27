@@ -3,8 +3,13 @@ package com.example.courseregistrationsystem;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
+import android.widget.TableLayout;
+import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,7 +33,6 @@ public class Profile extends AppCompatActivity {
         stuName=findViewById(R.id.tv_profile_stuName);
         stuEmail=findViewById(R.id.tv_profile_stuEmail);
         stuPhone=findViewById(R.id.tv_profile_stuPhone);
-        course_enrolled=findViewById(R.id.tv_profile_courseEnrolled);
         dbhelper=new DBHelper(Profile.this);
         String student_id=getIntent().getStringExtra("student_id");
         String stu_Name =displayStudentInfo(student_id);
@@ -101,14 +105,25 @@ public class Profile extends AppCompatActivity {
                 courses.add(course);
             } while (cursor.moveToNext());
             int i=1;
-            StringBuilder builder = new StringBuilder();
-            builder.append("Courses Enrolled:\n");
+            TableLayout tableLayout=findViewById(R.id.tableLayout_profile);
             for(String course:courses){
-                builder.append(i).append(". ").append(course).append("\n");
+                TableRow tableRow=new TableRow(this);
+                TextView textView1=new TextView(this);
+                textView1.setText(i+". "+course);
+                textView1.setTextSize(20);
+                textView1.setPadding(10,10,10,10);
+                textView1.setTextColor(Color.parseColor("#FFD700"));
+                textView1.setTypeface(null, Typeface.ITALIC);
+                textView1.setGravity(Gravity.CENTER);
+                tableRow.addView(textView1);
+                tableLayout.addView(tableRow);
                 i++;
             }
-            course_enrolled.setText(builder.toString());
         cursor.close();
     }
 }
+    public void onBackPressed(){
+        Intent intent=new Intent(Profile.this,MainActivity.class);
+        startActivity(intent);
+    }
 }

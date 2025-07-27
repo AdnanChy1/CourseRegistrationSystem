@@ -83,6 +83,8 @@ public class UpdateProfile extends AppCompatActivity {
     }
     public void onBackPressed(){
         Intent intent=new Intent(UpdateProfile.this,Profile.class);
+        String student_id = getIntent().getStringExtra("student_id");
+        intent.putExtra("student_id",student_id);
         startActivity(intent);
     }
 }

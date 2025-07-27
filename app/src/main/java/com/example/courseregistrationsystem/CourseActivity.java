@@ -46,6 +46,7 @@ public class CourseActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(CourseActivity.this, CourseInfo.class);
+                intent.putExtra("student_id", student_id);
                 startActivity(intent);
             }
         });
@@ -140,7 +141,9 @@ public class CourseActivity extends AppCompatActivity {
         return getCourses;
     }
     public void onBackPressed(){
+        String student_id = getIntent().getStringExtra("student_id");
         Intent intent=new Intent(CourseActivity.this,Profile.class);
+        intent.putExtra("student_id",student_id);
         startActivity(intent);
     }
 }

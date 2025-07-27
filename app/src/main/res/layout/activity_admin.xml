@@ -4,7 +4,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/admin"
+    android:fitsSystemWindows="true">
 <LinearLayout
     android:id="@+id/admin"
     android:layout_width="match_parent"
@@ -21,6 +23,8 @@
         android:ems="10"
         android:hint="Enter the Password to continue"
         android:inputType="textPassword"
+        android:textColor="#EBE3E3"
+        android:textColorHint="#F0F4F4"
         tools:layout_editor_absoluteX="18dp"
         tools:layout_editor_absoluteY="62dp" />
 
@@ -30,6 +34,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="250dp"
+        android:backgroundTint="#F50057"
         android:text="Submit" />
 
     <EditText
@@ -39,8 +44,10 @@
         android:layout_marginTop="20dp"
         android:ems="10"
         android:hint="Student ID"
-        android:visibility="invisible"
-        android:inputType="text" />
+        android:inputType="text"
+        android:textColor="#E4DCDC"
+        android:textColorHint="#00E5FF"
+        android:visibility="invisible" />
 
     <EditText
         android:id="@+id/et_admin_courseName"
@@ -49,8 +56,10 @@
         android:layout_marginTop="20dp"
         android:ems="10"
         android:hint="Course Name"
-        android:visibility="invisible"
-        android:inputType="text" />
+        android:inputType="text"
+        android:textColor="#E4DCDC"
+        android:textColorHint="#00E5FF"
+        android:visibility="invisible" />
 
     <EditText
         android:id="@+id/et_admin_courseCredit"
@@ -59,8 +68,10 @@
         android:layout_marginTop="20dp"
         android:ems="10"
         android:hint="Course Credit"
-        android:visibility="invisible"
-        android:inputType="text" />
+        android:inputType="text"
+        android:textColor="#E4DCDC"
+        android:textColorHint="#00E5FF"
+        android:visibility="invisible" />
 
     <EditText
         android:id="@+id/et_admin_courseGPA"
@@ -69,8 +80,10 @@
         android:layout_marginTop="20dp"
         android:ems="10"
         android:hint="Course GPA"
-        android:visibility="invisible"
-        android:inputType="text" />
+        android:inputType="text"
+        android:textColor="#E4DCDC"
+        android:textColorHint="#EBEBEB"
+        android:visibility="invisible" />
 
     <EditText
         android:id="@+id/et_admin_courseGrade"
@@ -79,8 +92,10 @@
         android:layout_marginTop="20dp"
         android:ems="10"
         android:hint="Course Grade"
-        android:visibility="invisible"
-        android:inputType="text" />
+        android:inputType="text"
+        android:textColor="#E4DCDC"
+        android:textColorHint="#00E5FF"
+        android:visibility="invisible" />
 
     <Button
         android:id="@+id/btn_admin_addCourse"
@@ -89,8 +104,10 @@
         android:layout_marginStart="50dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="50dp"
-        android:visibility="invisible"
-        android:text="Add to Results" />
+        android:backgroundTint="#00E5FF"
+        android:text="Add to Results"
+        android:textColor="#161515"
+        android:visibility="invisible" />
 
 </LinearLayout>
 </ScrollView>

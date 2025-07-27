@@ -3,119 +3,146 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_height="match_parent">
-<LinearLayout
-    android:id="@+id/pass_admin"
-    android:layout_width="match_parent"
-    android:orientation="vertical"
-    android:layout_height="wrap_content"
-    tools:context=".Profile">
+    android:layout_height="match_parent"
+    android:background="@drawable/profile"
+    android:fitsSystemWindows="true">
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="69dp"
-        android:layout_gravity="center"
-        app:srcCompat="@drawable/lulogo"
-        tools:layout_editor_absoluteX="96dp"
-        tools:layout_editor_absoluteY="39dp" />
-
-    <TextView
-        android:id="@+id/tv_profile_info"
+    <LinearLayout
+        android:id="@+id/pass_admin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:gravity="center"
-        android:text="Student Information"
-        android:textColor="#070707"
-        android:textSize="20sp"
-        android:textStyle="bold" />
+        android:backgroundTint="#00E5FF"
+        android:orientation="vertical"
+        tools:context=".Profile">
 
-    <TextView
-        android:id="@+id/tv_profile_stuID"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="StudentID:"
-        android:textColor="#070707"
-        android:textSize="18sp"
-        android:textStyle="bold" />
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="69dp"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/lulogo"
+            tools:layout_editor_absoluteX="96dp"
+            tools:layout_editor_absoluteY="39dp" />
 
-    <TextView
-        android:id="@+id/tv_profile_stuName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="Name:"
-        android:textColor="#070707"
-        android:textSize="18sp"
-        android:textStyle="bold" />
+        <TextView
+            android:id="@+id/tv_profile_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:shadowColor="#FF3D00"
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:shadowRadius="5"
+            android:text="Student Information"
+            android:textColor="#FFD700"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/tv_profile_stuEmail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="Email:"
-        android:textColor="#070707"
-        android:textSize="18sp"
-        android:textStyle="bold" />
+        <TextView
+            android:id="@+id/tv_profile_stuID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="StudentID:"
+            android:textColor="#C6FF00"
+            android:textSize="25sp"
+            android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/tv_profile_stuPhone"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="Phone:"
-        android:textColor="#070707"
-        android:textSize="18sp"
-        android:textStyle="bold" />
+        <TextView
+            android:id="@+id/tv_profile_stuName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Name:"
+            android:textColor="#76FF03"
+            android:textSize="25sp"
+            android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/tv_profile_courseEnrolled"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="Courses Enrolled:"
-        android:textColor="#070707"
-        android:textSize="20sp"
-        android:textStyle="bold" />
+        <TextView
+            android:id="@+id/tv_profile_stuEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Email:"
+            android:textColor="#C6FF00"
+            android:textSize="25sp"
+            android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/btn_profile_addwithdrawCourse"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="100dp"
-        android:gravity="center"
-        android:text="Add/Withdraw Courses" />
+        <TextView
+            android:id="@+id/tv_profile_stuPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Phone:"
+            android:textColor="#C6FF00"
+            android:textSize="25sp"
+            android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/btn_profile_logout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="100dp"
-        android:text="Logout" />
+        <TableLayout
+            android:id="@+id/tableLayout_profile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="70dp"
+            android:padding="8dp"
+            android:stretchColumns="*">
 
-    <Button
-        android:id="@+id/btn_profile_updateProfile"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="100dp"
-        android:text="Update Profile" />
+            <TableRow android:background="#C0C0C0">
 
-    <Button
-        android:id="@+id/btn_profile_result"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="100dp"
-        android:text="Results" />
-</LinearLayout>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="3.5"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="Courses Enrolled"
+                    android:textColor="#050505"
+                    android:textStyle="bold" />
+            </TableRow>
+        </TableLayout>
+
+        <Button
+            android:id="@+id/btn_profile_addwithdrawCourse"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="100dp"
+            android:backgroundTint="#00E5FF"
+            android:gravity="center"
+            android:text="Add/Withdraw Courses"
+            android:textColor="#0C0C0D" />
+
+        <Button
+            android:id="@+id/btn_profile_updateProfile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="100dp"
+            android:backgroundTint="#00E5FF"
+            android:text="Update Profile"
+            android:textColor="#141414" />
+
+        <Button
+            android:id="@+id/btn_profile_result"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="100dp"
+            android:backgroundTint="#00E5FF"
+            android:text="Results"
+            android:textColor="#1D1C1C" />
+
+        <Button
+            android:id="@+id/btn_profile_logout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="100dp"
+            android:backgroundTint="#FF3D00"
+            android:text="Logout"
+            android:textColor="#242323" />
+    </LinearLayout>
 </ScrollView>

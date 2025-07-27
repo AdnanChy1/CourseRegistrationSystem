@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-<LinearLayout
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/update"
+    android:fitsSystemWindows="true">
+<LinearLayout
     android:id="@+id/pass_admin"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -25,6 +27,11 @@
         android:layout_marginTop="20dp"
         android:gravity="center"
         android:text="Update Profile"
+        android:textColor="#141313"
+        android:shadowColor="#00FF00"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="5"
         android:textSize="30sp"
         android:textStyle="bold" />
 
@@ -34,7 +41,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:ems="10"
-        android:inputType="text" />
+        android:inputType="text"
+        android:textColor="#141313"
+        android:textColorHint="#FF1744" />
 
     <EditText
         android:id="@+id/et_UP_email"
@@ -42,7 +51,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:ems="10"
-        android:inputType="text" />
+        android:inputType="text"
+        android:textColor="#141313" />
 
     <EditText
         android:id="@+id/et_UP_phone"
@@ -50,7 +60,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:ems="10"
-        android:inputType="text" />
+        android:inputType="text"
+        android:textColor="#141313" />
 
     <EditText
         android:id="@+id/et_UP_password"
@@ -59,7 +70,9 @@
         android:layout_marginTop="20dp"
         android:ems="10"
         android:hint="Enter Password to confirm"
-        android:inputType="textPassword" />
+        android:inputType="textPassword"
+        android:textColor="#1A1919"
+        android:textColorHint="#101010" />
 
     <Button
         android:id="@+id/btn_UP_Update"
@@ -68,7 +81,10 @@
         android:layout_marginStart="100dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="100dp"
-        android:text="Update" />
+        android:backgroundTint="#DA1EE5E2"
+        android:text="Update"
+        android:textColor="#181717"
+        android:textSize="20sp" />
 
 </LinearLayout>
 </ScrollView>

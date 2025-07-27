@@ -3,7 +3,9 @@ package com.example.courseregistrationsystem;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -14,7 +16,6 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Result extends AppCompatActivity {
@@ -44,7 +45,7 @@ public class Result extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        TableLayout tableLayout = findViewById(R.id.tableLayout);
+        TableLayout tableLayout = findViewById(R.id.tableLayout_profile);
         ArrayList<String> courseNames = new ArrayList<>();
         ArrayList<String> courseCredit = new ArrayList<>();
         ArrayList<String> courseGPA = new ArrayList<>();
@@ -66,23 +67,31 @@ public class Result extends AppCompatActivity {
             TableRow tableRow=new TableRow(this);
             TextView textView1=new TextView(this);
             textView1.setText(courseNames.get(i));
-            textView1.setTextSize(8);
+            textView1.setTextSize(16);
             textView1.setPadding(10,10,10,10);
+            textView1.setTextColor(Color.parseColor("#FFFFFF"));
+            textView1.setGravity(Gravity.START);
             tableRow.addView(textView1);
             TextView textView2=new TextView(this);
             textView2.setText(courseCredit.get(i));
             textView2.setTextSize(16);
             textView2.setPadding(10,10,10,10);
+            textView2.setTextColor(Color.parseColor("#FFFFFF"));
+            textView2.setGravity(Gravity.CENTER);
             tableRow.addView(textView2);
             TextView textView3=new TextView(this);
             textView3.setText(courseGPA.get(i));
             textView3.setTextSize(16);
             textView3.setPadding(10,10,10,10);
+            textView3.setTextColor(Color.parseColor("#FFFFFF"));
+            textView3.setGravity(Gravity.CENTER);
             tableRow.addView(textView3);
             TextView textView4=new TextView(this);
             textView4.setText(courseGrade.get(i));
             textView4.setTextSize(16);
             textView4.setPadding(10,10,10,10);
+            textView4.setTextColor(Color.parseColor("#FFFFFF"));
+            textView4.setGravity(Gravity.CENTER);
             tableRow.addView(textView4);
             tableLayout.addView(tableRow);
         }
@@ -124,6 +133,8 @@ public class Result extends AppCompatActivity {
     }
     public void onBackPressed(){
         Intent intent=new Intent(Result.this,Profile.class);
+        String student_id = getIntent().getStringExtra("student_id");
+        intent.putExtra("student_id",student_id);
         startActivity(intent);
     }
 }

@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-<LinearLayout
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/register"
+    android:fitsSystemWindows="true">
+<LinearLayout
     android:id="@+id/pass_admin"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -16,8 +18,8 @@
 
     <ImageView
         android:id="@+id/lulogo_signup"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="208dp"
+        android:layout_height="133dp"
         android:layout_gravity="center"
         app:srcCompat="@drawable/lulogo"
         tools:layout_editor_absoluteX="114dp"
@@ -29,8 +31,12 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
-        android:text="Signup "
-        android:textColor="#D30AF6"
+        android:shadowColor="#3D5AFE"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="5"
+        android:text="Sign Up "
+        android:textColor="#C6FF00"
         android:textSize="30sp"
         android:textStyle="bold"
         tools:layout_editor_absoluteX="157dp"
@@ -45,7 +51,9 @@
         android:layout_marginRight="20dp"
         android:ems="10"
         android:hint="@string/enter_your_student_id"
-        android:inputType="text" />
+        android:inputType="text"
+        android:textColor="#E9DDDD"
+        android:textColorHint="#F4F0F0" />
 
     <EditText
         android:id="@+id/et_signup_name"
@@ -56,7 +64,9 @@
         android:layout_marginRight="20dp"
         android:ems="10"
         android:hint="@string/enter_full_name"
-        android:inputType="text" />
+        android:inputType="text"
+        android:textColor="#E9DDDD"
+        android:textColorHint="#EFECEC" />
 
     <EditText
         android:id="@+id/et_signup_pass"
@@ -67,7 +77,9 @@
         android:layout_marginRight="20dp"
         android:ems="10"
         android:hint="@string/enter_your_password"
-        android:inputType="textPassword" />
+        android:inputType="textPassword"
+        android:textColor="#E9DDDD"
+        android:textColorHint="#EFECEC" />
 
     <EditText
         android:id="@+id/et_signup_email"
@@ -78,7 +90,9 @@
         android:layout_marginRight="20dp"
         android:ems="10"
         android:hint="@string/enter_your_email"
-        android:inputType="textEmailAddress" />
+        android:inputType="textEmailAddress"
+        android:textColor="#E9DDDD"
+        android:textColorHint="#EFECEC" />
 
     <EditText
         android:id="@+id/et_signup_phone"
@@ -89,7 +103,9 @@
         android:layout_marginRight="20dp"
         android:ems="10"
         android:hint="@string/enter_your_phone_number"
-        android:inputType="phone" />
+        android:inputType="phone"
+        android:textColor="#E9DDDD"
+        android:textColorHint="#EFECEC" />
 
     <Button
         android:id="@+id/btn_signup_submit"
@@ -99,7 +115,9 @@
         android:layout_marginLeft="100dp"
         android:layout_marginTop="20dp"
         android:layout_marginRight="100dp"
-        android:text="Submit" />
+        android:backgroundTint="#FFD700"
+        android:text="Submit"
+        android:textColor="#232121" />
 
 </LinearLayout>
 </ScrollView>

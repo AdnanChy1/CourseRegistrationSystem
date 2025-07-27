@@ -2,6 +2,7 @@ package com.example.courseregistrationsystem;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,9 +22,20 @@ public class CourseInfo extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+        findViewById(R.id.btn_courseinfo_back).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String student_id = getIntent().getStringExtra("student_id");
+                Intent intent = new Intent(CourseInfo.this, CourseActivity.class);
+                intent.putExtra("student_id", student_id);
+                startActivity(intent);
+            }
+        });
     }
     public void onBackPressed(){
         Intent intent=new Intent(CourseInfo.this,CourseActivity.class);
+        String student_id = getIntent().getStringExtra("student_id");
+        intent.putExtra("student_id",student_id);
         startActivity(intent);
     }
 }

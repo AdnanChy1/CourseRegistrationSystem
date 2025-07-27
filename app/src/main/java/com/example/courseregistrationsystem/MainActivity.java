@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, SignupActivity.class);
                 startActivity(intent);
+                overridePendingTransition(R.anim.slide_down,R.anim.slide_down);
             }
         });
         findViewById(R.id.btn_submit_login).setOnClickListener(new View.OnClickListener() {
@@ -49,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
                     Intent intent=new Intent(MainActivity.this,Profile.class);
                     intent.putExtra("student_id",stuID);
                     startActivity(intent);
+                    overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                 }
                 else{
                     Toast.makeText(MainActivity.this,"Enter valid ID and Password!",Toast.LENGTH_SHORT).show();
@@ -58,6 +60,9 @@ public class MainActivity extends AppCompatActivity {
     }
     public void onBackPressed(){
         Intent intent=new Intent(MainActivity.this,WelcomeActivity.class);
+        String student_id = getIntent().getStringExtra("student_id");
+        intent.putExtra("student_id",student_id);
         startActivity(intent);
+
     }
 }
